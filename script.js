@@ -23,6 +23,7 @@ function loadData() {
     updateRepresentativesList();
 }
 
+// إضافة مندوب جديد
 function addRepresentative() {
     const name = prompt('أدخل اسم المندوب');
     if (name) {
@@ -37,6 +38,7 @@ function addRepresentative() {
     }
 }
 
+// حذف مندوب
 function deleteRepresentative(id) {
     if (confirm('هل أنت متأكد من حذف هذا المندوب؟')) {
         representatives = representatives.filter(rep => rep.id !== id);
@@ -51,6 +53,7 @@ function deleteRepresentative(id) {
     }
 }
 
+// اختيار مندوب لعرض المصروفات
 function selectRepresentative(id) {
     selectedRep = id;
     const rep = representatives.find(r => r.id === id);
@@ -60,6 +63,7 @@ function selectRepresentative(id) {
     updateExpenseTable();
 }
 
+// إضافة صف جديد للمصروفات
 function addExpenseRow() {
     if (selectedRep) {
         const newExpense = {
@@ -76,6 +80,7 @@ function addExpenseRow() {
     }
 }
 
+// حذف صف من المصروفات
 function deleteExpenseRow(expenseId) {
     if (selectedRep) {
         expenses[selectedRep] = expenses[selectedRep].filter(exp => exp.id !== expenseId);
@@ -84,6 +89,7 @@ function deleteExpenseRow(expenseId) {
     }
 }
 
+// تحديث البيانات داخل الصفوف
 function updateExpense(expenseId, field, value) {
     if (selectedRep) {
         expenses[selectedRep] = expenses[selectedRep].map(exp => {
@@ -97,6 +103,7 @@ function updateExpense(expenseId, field, value) {
     }
 }
 
+// تحديث جدول المصروفات
 function updateExpenseTable() {
     const tbody = document.getElementById('expense-table-body');
     tbody.innerHTML = '';
@@ -120,6 +127,7 @@ function updateExpenseTable() {
     }
 }
 
+// تحديث قائمة المناديب
 function updateRepresentativesList() {
     const list = document.getElementById('representatives-list');
     list.innerHTML = '';
@@ -134,6 +142,7 @@ function updateRepresentativesList() {
     });
 }
 
+// طباعة التقارير لجميع المناديب
 function printAllReports() {
     const printWindow = window.open('', '_blank');
     let content = '<html dir="rtl"><head><title>تقرير شامل</title>';
@@ -172,6 +181,7 @@ function printAllReports() {
     printWindow.focus();
 }
 
+// مسح جميع البيانات
 function clearAllData() {
     if (confirm('هل أنت متأكد من مسح جميع البيانات؟')) {
         representatives = [];
@@ -184,6 +194,7 @@ function clearAllData() {
     }
 }
 
+// تصدير التقرير
 function exportToReport() {
     const modal = document.getElementById('report-modal');
     const content = document.getElementById('report-content');
@@ -209,22 +220,4 @@ function exportToReport() {
             </tr>`;
         });
         
-        reportHTML += `<tr><td colspan="4" style="text-align:left;font-weight:bold;">الإجمالي</td><td style="font-weight:bold;">${total}</td></tr>`;
-        reportHTML += '</tbody></table>';
-    });
-    
-    reportHTML += `<h3>الإجمالي الكلي: ${grandTotal}</h3>`;
-    content.innerHTML = reportHTML;
-    modal.style.display = 'block';
-}
-
-function closeModal() {
-    document.getElementById('report-modal').style.display = 'none';
-}
-
-function printReport() {
-    window.print();
-}
-
-// تحميل البيانات عند بدء التطبيق
-document.addEventListener('DOMContentLoaded', loadData);
+        reportHTML += `<tr><td colspan="4" style="text-align:left;font-weight:bold;">الإجمالي</td
