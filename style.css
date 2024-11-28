@@ -1,3 +1,4 @@
+/* إعدادات عامة للصفحة */
 * {
     margin: 0;
     padding: 0;
@@ -5,11 +6,13 @@
     font-family: Arial, sans-serif;
 }
 
+/* حاوية التطبيق */
 .app-container {
     display: flex;
     min-height: 100vh;
 }
 
+/* الشريط الجانبي */
 .sidebar {
     width: 250px;
     background-color: #1f2937;
@@ -18,6 +21,7 @@
     transition: all 0.3s ease;
 }
 
+/* رأس الشريط الجانبي */
 .sidebar-header {
     display: flex;
     justify-content: space-between;
@@ -25,6 +29,7 @@
     margin-bottom: 1.5rem;
 }
 
+/* الإجراءات في الشريط الجانبي */
 .sidebar-actions {
     margin-top: 2rem;
     display: flex;
@@ -32,6 +37,7 @@
     gap: 0.5rem;
 }
 
+/* الأزرار في الشريط الجانبي */
 .action-btn {
     width: 100%;
     padding: 0.75rem;
@@ -42,6 +48,7 @@
     transition: all 0.3s ease;
 }
 
+/* الأزرار الخاصة بـ "طباعة الكل" */
 .print-all {
     background-color: #3b82f6;
     color: white;
@@ -51,6 +58,7 @@
     background-color: #2563eb;
 }
 
+/* الأزرار الخاصة بـ "مسح البيانات" */
 .clear-all {
     background-color: #ef4444;
     color: white;
@@ -60,6 +68,7 @@
     background-color: #dc2626;
 }
 
+/* الأزرار الخاصة بـ "تصدير التقرير" */
 .export {
     background-color: #10b981;
     color: white;
@@ -69,6 +78,7 @@
     background-color: #059669;
 }
 
+/* زر إضافة مندوب */
 .add-btn {
     background-color: #22c55e;
     border: none;
@@ -85,6 +95,7 @@
     transform: rotate(90deg);
 }
 
+/* المحتوى الرئيسي */
 .main-content {
     flex: 1;
     background-color: white;
@@ -92,6 +103,7 @@
     transition: all 0.3s ease;
 }
 
+/* الرسالة الترحيبية */
 #welcome-message {
     height: 100%;
     display: flex;
@@ -100,6 +112,7 @@
     color: #6b7280;
 }
 
+/* رأس الجدول */
 .header {
     padding: 1rem;
     background-color: #f3f4f6;
@@ -108,6 +121,7 @@
     animation: slideDown 0.3s ease;
 }
 
+/* تنسيق الجدول */
 table {
     width: 100%;
     border-collapse: collapse;
@@ -132,6 +146,7 @@ tr:hover {
     background-color: #f9fafb;
 }
 
+/* تنسيق الحقول المدخلة */
 input {
     width: 100%;
     padding: 0.25rem;
@@ -144,12 +159,14 @@ input:focus {
     border-color: #3b82f6;
 }
 
+/* تنسيق إجراءات الجدول */
 .table-actions {
     display: flex;
     justify-content: space-between;
     margin-top: 1rem;
 }
 
+/* الأزرار الخاصة بالجدول */
 .add-row-btn, .print-btn {
     padding: 0.5rem 1rem;
     border: none;
@@ -158,6 +175,7 @@ input:focus {
     transition: all 0.3s ease;
 }
 
+/* زر إضافة صف */
 .add-row-btn {
     background-color: #3b82f6;
     color: white;
@@ -168,6 +186,7 @@ input:focus {
     transform: translateY(-2px);
 }
 
+/* زر طباعة */
 .print-btn {
     background-color: #22c55e;
     color: white;
@@ -178,6 +197,7 @@ input:focus {
     transform: translateY(-2px);
 }
 
+/* زر الحذف */
 .delete-btn {
     color: #ef4444;
     background: none;
@@ -192,6 +212,7 @@ input:focus {
     transform: scale(1.2);
 }
 
+/* تنسيق قائمة المناديب */
 #representatives-list {
     list-style: none;
 }
@@ -210,6 +231,7 @@ input:focus {
     transform: translateX(-5px);
 }
 
+/* نافذة المودال */
 .modal {
     display: none;
     position: fixed;
@@ -221,6 +243,7 @@ input:focus {
     z-index: 1000;
 }
 
+/* محتوى نافذة المودال */
 .modal-content {
     background-color: white;
     margin: 5% auto;
@@ -253,6 +276,7 @@ input:focus {
     }
 }
 
+/* تنسيقات للطباعة */
 @media print {
     .sidebar, .table-actions, .modal {
         display: none !important;
